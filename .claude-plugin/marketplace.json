@@ -1,0 +1,17 @@
+{
+  "name": "redmern",
+  "description": "Redmern's Claude Code plugins: prompt-meter and prompt-analyzer",
+  "owner": { "name": "Redmern", "url": "https://github.com/Redmern" },
+  "plugins": [
+    {
+      "name": "prompt-meter",
+      "source": { "source": "github", "repo": "Redmern/prompt-meter" },
+      "description": "See how each prompt splits into tokens, how it moves the context window, and what every turn cost"
+    },
+    {
+      "name": "prompt-analyzer",
+      "source": { "source": "github", "repo": "Redmern/prompt-analyzer" },
+      "description": "Review a prompt before you send it: score, wording, missing context, skills, improved version"
+    }
+  ]
+}
