@@ -1,0 +1,10 @@
+{
+  "name": "teach",
+  "version": "0.1.0",
+  "description": "Learn a topic over several sessions: a mission, lessons, a glossary and a learning record in your workspace. teachxl adds interactive HTML lessons with live in-page chat",
+  "author": {
+    "name": "Redmern",
+    "url": "https://github.com/Redmern"
+  },
+  "license": "MIT"
+}

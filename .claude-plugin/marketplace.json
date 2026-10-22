@@ -1,6 +1,6 @@
 {
   "name": "redmern",
-  "description": "Redmern's Claude Code plugins: prompt-meter and prompt-analyzer",
+  "description": "Redmern's Claude Code plugins: prompt-meter, prompt-analyzer and teach",
   "owner": {
     "name": "Redmern",
     "url": "https://github.com/Redmern"
@@ -21,6 +21,11 @@
         "url": "https://github.com/Redmern/prompt-analyzer.git"
       },
       "description": "Review a prompt before you send it: score, wording, missing context, skills, improved version"
+    },
+    {
+      "name": "teach",
+      "source": "./plugins/teach",
+      "description": "Learn a topic over several sessions (/teach:teach), or with interactive HTML lessons and live chat (/teach:teachxl)"
     }
   ]
 }

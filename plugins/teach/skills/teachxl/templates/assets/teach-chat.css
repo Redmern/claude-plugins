@@ -1,0 +1,136 @@
+/* teachxl chat widget. Shared by every lesson; do not inline per-lesson. */
+
+.tx-discuss {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin-left: 0.5em;
+  padding: 0.1em 0.55em;
+  font: inherit;
+  font-size: 0.8em;
+  line-height: 1.6;
+  color: #555;
+  background: #f3f1ea;
+  border: 1px solid #ddd6c8;
+  border-radius: 999px;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: background 0.15s, color 0.15s;
+}
+.tx-discuss:hover { background: #e9e4d6; color: #222; }
+
+.tx-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(420px, 92vw);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fbfaf6;
+  border-left: 1px solid #e2dccd;
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.08);
+  transform: translateX(100%);
+  transition: transform 0.22s ease;
+  z-index: 9999;
+  font-family: -apple-system, Georgia, "Times New Roman", serif;
+}
+.tx-drawer.tx-open { transform: translateX(0); }
+
+.tx-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.9em 1em;
+  border-bottom: 1px solid #ece6d8;
+}
+.tx-head h4 { margin: 0; font-size: 1rem; color: #222; flex: 1; }
+.tx-head small { color: #999; font-size: 0.7rem; }
+.tx-close {
+  border: 0; background: none; cursor: pointer;
+  font-size: 1.2rem; color: #999; line-height: 1;
+}
+.tx-close:hover { color: #333; }
+
+.tx-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9em;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.tx-msg { max-width: 92%; }
+.tx-msg.tx-user {
+  align-self: flex-end;
+  background: #eef3ec;
+  border: 1px solid #dde7d8;
+  border-radius: 10px 10px 2px 10px;
+  padding: 0.5em 0.7em;
+  color: #2a3a2a;
+}
+.tx-msg.tx-bot { align-self: flex-start; color: #222; }
+.tx-msg.tx-bot pre {
+  background: #f1efe8; border: 1px solid #e4ddcc;
+  border-radius: 6px; padding: 0.6em 0.7em; overflow-x: auto;
+  font-size: 0.82em;
+}
+.tx-msg.tx-bot code {
+  background: #f1efe8; border-radius: 3px; padding: 0.05em 0.3em;
+  font-size: 0.85em;
+}
+.tx-msg.tx-bot pre code { background: none; padding: 0; }
+.tx-msg.tx-bot a { color: #7a5; }
+.tx-msg.tx-err { color: #b3261e; font-size: 0.85rem; }
+.tx-msg.tx-ctx {
+  align-self: flex-start; color: #888; font-size: 0.78rem;
+  border-left: 2px solid #e2dccd; padding-left: 0.7em;
+}
+
+.tx-form {
+  display: flex; gap: 0.5em; padding: 0.8em;
+  border-top: 1px solid #ece6d8;
+}
+.tx-form textarea {
+  flex: 1; resize: none; min-height: 2.4em; max-height: 9em;
+  padding: 0.5em 0.6em; font: inherit; font-size: 0.9rem;
+  border: 1px solid #ddd6c8; border-radius: 8px; background: #fff;
+}
+.tx-form button {
+  align-self: flex-end; padding: 0.5em 0.9em; font: inherit;
+  border: 0; border-radius: 8px; background: #2a3a2a; color: #fbfaf6;
+  cursor: pointer;
+}
+.tx-form button:disabled { opacity: 0.5; cursor: default; }
+
+.tx-blink::after {
+  content: "▍"; animation: tx-blink 1s steps(2) infinite; color: #999;
+}
+@keyframes tx-blink { 0%, 50% { opacity: 1; } 50.01%, 100% { opacity: 0; } }
+
+.tx-warn {
+  position: fixed; bottom: 1em; right: 1em; z-index: 9999;
+  max-width: 320px; padding: 0.7em 0.9em; font-size: 0.8rem;
+  background: #fff4e5; border: 1px solid #f0d9b5; border-radius: 8px;
+  color: #7a5a1e;
+}
+
+/* ---- built-in quiz convention ---- */
+.tx-opt {
+  display: block; width: 100%; text-align: left; margin: 0.3em 0;
+  padding: 0.5em 0.7em; font: inherit; font-size: 0.95em;
+  background: #fff; border: 1px solid #ddd6c8; border-radius: 8px; cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+.tx-opt:hover:not(:disabled) { background: #f6f4ec; }
+.tx-opt:disabled { cursor: default; }
+.tx-opt.tx-correct { background: #eaf4e6; border-color: #b9d8aa; color: #2f5a23; }
+.tx-opt.tx-incorrect { background: #fbeceb; border-color: #e6b8b3; color: #8a2a22; }
+
+.tx-finish {
+  margin-top: 1em; padding: 0.6em 1em; font: inherit;
+  background: #2a3a2a; color: #fbfaf6; border: 0; border-radius: 8px; cursor: pointer;
+}
+.tx-finish:hover { background: #38503a; }
