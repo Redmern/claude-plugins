@@ -1,6 +1,6 @@
 {
   "name": "redmern",
-  "description": "Redmern's Claude Code plugins: prompt-meter, prompt-analyzer and teach",
+  "description": "Redmern's Claude Code plugins: prompt-meter, prompt-analyzer, teach and plain",
   "owner": {
     "name": "Redmern",
     "url": "https://github.com/Redmern"
@@ -26,6 +26,11 @@
       "name": "teach",
       "source": "./plugins/teach",
       "description": "Learn a topic over several sessions (/teach:teach), or with interactive HTML lessons and live chat (/teach:teachxl)"
+    },
+    {
+      "name": "plain",
+      "source": "./plugins/plain",
+      "description": "Rewrite text in Simplified Technical English (ASD-STE100) at about 80% adherence (/plain:plain)"
     }
   ]
 }

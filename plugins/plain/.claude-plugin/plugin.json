@@ -1,0 +1,10 @@
+{
+  "name": "plain",
+  "version": "0.1.0",
+  "description": "Rewrite text in Simplified Technical English (ASD-STE100) at about 80% adherence",
+  "author": {
+    "name": "Redmern",
+    "url": "https://github.com/Redmern"
+  },
+  "license": "MIT"
+}
